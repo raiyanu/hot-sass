@@ -10,6 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: npm version patch
-      - run: |
+      - name: Commit version bump
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add package.json package-lock.json
+          git commit -m "ci: bump version to $(jq -r .version package.json)"
           git push
           git push origin v$(jq -r .version package.json)
