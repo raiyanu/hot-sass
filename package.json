@@ -23,5 +23,13 @@
 	"devDependencies": {
 		"@rollup/plugin-terser": "^0.4.4",
 		"rollup": "^4.34.9"
-	}
+	},
+	"keywords": [
+		"sass",
+		"vanilla",
+		"sass loader",
+		"sass parser",
+		"sass transformer",
+		"hot-sass"
+	]
 }
