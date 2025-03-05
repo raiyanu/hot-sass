@@ -1,0 +1,27 @@
+{
+	"name": "hot-sass",
+	"version": "1.0.0",
+	"type": "module",
+	"description": "A lightweight utility library for JavaScript",
+	"main": "dist/hot-sass.cjs.js",
+	"module": "dist/hot-sass.esm.js",
+	"browser": "dist/hot-sass.umd.js",
+	"files": [
+		"dist",
+		"src",
+		"LICENSE",
+		"README.md"
+	],
+	"scripts": {
+		"build": "rollup -c"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/raiyanu/hot-sass"
+	},
+	"license": "CC-BY-4.0",
+	"devDependencies": {
+		"@rollup/plugin-terser": "^0.4.4",
+		"rollup": "^4.34.9"
+	}
+}
