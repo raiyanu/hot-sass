@@ -1,0 +1,15 @@
+name: Prepare Release
+on:
+  push:
+    branches: [main]
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm version patch
+      - run: |
+          git push
+          git push origin v$(jq -r .version package.json)
