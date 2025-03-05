@@ -9,12 +9,16 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Commit version bump
+      - name: Config Git identity
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: bump version
+        run: |
+          npm version patch
+      - name: Commit version bump
+        run: |
           git add package.json package-lock.json
           git commit -m "ci: bump version to $(jq -r .version package.json)"
           git push
           git push origin v$(jq -r .version package.json)
-      - run: npm version patch
