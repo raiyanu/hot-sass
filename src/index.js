@@ -1,4 +1,4 @@
-function HotSass() {
+export function HotSass() {
     const dataUrl = document.currentScript?.getAttribute('sass-url');
 
     const scssLinks = document.querySelectorAll('link[rel="scss"], link[rel="sass"]');
@@ -44,6 +44,7 @@ function HotSass() {
 }
 
 const autorun = document.currentScript?.hasAttribute('data-autorun');
+
 if (autorun) {
     HotSass();
 }
