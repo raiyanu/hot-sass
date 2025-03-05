@@ -9,7 +9,6 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - run: npm version patch
       - name: Commit version bump
         run: |
           git config --global user.name "github-actions[bot]"
@@ -18,3 +17,4 @@ jobs:
           git commit -m "ci: bump version to $(jq -r .version package.json)"
           git push
           git push origin v$(jq -r .version package.json)
+      - run: npm version patch
