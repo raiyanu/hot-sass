@@ -21,6 +21,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
       - run: npm ci
       - run: npm version patch
+      - run: cat package.json
       - run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
